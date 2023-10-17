@@ -1,0 +1,132 @@
+{
+  "config": {
+    "configFile": "/home/nikhil/Desktop/ParagonTest/playwright.config.ts",
+    "rootDir": "/home/nikhil/Desktop/ParagonTest/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1,
+      "totalTime": 300893.65599999996
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "dot",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "paragonjsonreports/paragon.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "Paragon-html-reports"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/home/nikhil/Desktop/ParagonTest/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/nikhil/Desktop/ParagonTest/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 300000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.37.1",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "Oauth.test.ts",
+      "file": "Oauth.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Validating the api key auth of Klaviyo integration",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "timedOut",
+                  "duration": 300000,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 300000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 300000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/home/nikhil/Desktop/ParagonTest/tests/Oauth.test.ts",
+                        "column": 31,
+                        "line": 66
+                      },
+                      "message": "Error: page.waitForEvent: Page closed\n=========================== logs ===========================\nwaiting for event \"popup\"\n============================================================\n\n  64 |     await runcode.fill(\"paragon.connect('klaviyo')\");\n  65 |     await page.getByTestId(\"run-code\").click();  \n> 66 |     const page1Promise = page.waitForEvent(\"popup\");\n     |                               ^\n  67 |     const element = page\n  68 |       .frameLocator(\"#paragon-connect-frame\")\n  69 |       .getByTestId(\"enable-button\");\n\n    at /home/nikhil/Desktop/ParagonTest/tests/Oauth.test.ts:66:31"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-10-16T18:21:07.504Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/home/nikhil/Desktop/ParagonTest/test-results/Oauth-Validating-the-api-key-auth-of-Klaviyo-integration-chromium/video.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/nikhil/Desktop/ParagonTest/test-results/Oauth-Validating-the-api-key-auth-of-Klaviyo-integration-chromium/test-failed-1.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3a8eff81eb6cddc395fb-3fec0696bc56a989d26e",
+          "file": "Oauth.test.ts",
+          "line": 47,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
