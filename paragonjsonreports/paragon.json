@@ -12,7 +12,7 @@
     "maxFailures": 0,
     "metadata": {
       "actualWorkers": 1,
-      "totalTime": 300893.65599999996
+      "totalTime": 9261.967
     },
     "preserveOutput": "always",
     "reporter": [
@@ -57,7 +57,7 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.37.1",
-    "workers": 4,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
@@ -68,7 +68,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "Validating the api key auth of Klaviyo integration",
+          "title": "Validating the Oauth of Gmail Integration",
           "ok": false,
           "tags": [],
           "tests": [
@@ -81,48 +81,46 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "timedOut",
-                  "duration": 300000,
+                  "status": "failed",
+                  "duration": 5842,
                   "error": {
-                    "message": "\u001b[31mTest timeout of 300000ms exceeded.\u001b[39m"
+                    "message": "locator.click: Page closed\n=========================== logs ===========================\nwaiting for getByTestId('project-id')\n============================================================",
+                    "stack": "Error: locator.click: Page closed\n=========================== logs ===========================\nwaiting for getByTestId('project-id')\n============================================================\n    at /home/nikhil/Desktop/ParagonTest/tests/Oauth.test.ts:5:40",
+                    "location": {
+                      "file": "/home/nikhil/Desktop/ParagonTest/tests/Oauth.test.ts",
+                      "column": 40,
+                      "line": 5
+                    },
+                    "snippet": "  3 | test(\"Validating the Oauth of Gmail Integration\", async ({ page }) => {\n  4 |   await page.goto(\"https://staging-connect.paragonsandbox.com/sandbox\");\n> 5 |   await page.getByTestId(\"project-id\").click();\n    |                                        ^\n  6 |   await page\n  7 |     .getByTestId(\"project-id\")\n  8 |     .fill(\"a4068e0d-e512-484a-af0a-2acaafb5d937\");"
                   },
                   "errors": [
                     {
-                      "message": "\u001b[31mTest timeout of 300000ms exceeded.\u001b[39m"
-                    },
-                    {
                       "location": {
                         "file": "/home/nikhil/Desktop/ParagonTest/tests/Oauth.test.ts",
-                        "column": 31,
-                        "line": 66
+                        "column": 40,
+                        "line": 5
                       },
-                      "message": "Error: page.waitForEvent: Page closed\n=========================== logs ===========================\nwaiting for event \"popup\"\n============================================================\n\n  64 |     await runcode.fill(\"paragon.connect('klaviyo')\");\n  65 |     await page.getByTestId(\"run-code\").click();  \n> 66 |     const page1Promise = page.waitForEvent(\"popup\");\n     |                               ^\n  67 |     const element = page\n  68 |       .frameLocator(\"#paragon-connect-frame\")\n  69 |       .getByTestId(\"enable-button\");\n\n    at /home/nikhil/Desktop/ParagonTest/tests/Oauth.test.ts:66:31"
+                      "message": "Error: locator.click: Page closed\n=========================== logs ===========================\nwaiting for getByTestId('project-id')\n============================================================\n\n  3 | test(\"Validating the Oauth of Gmail Integration\", async ({ page }) => {\n  4 |   await page.goto(\"https://staging-connect.paragonsandbox.com/sandbox\");\n> 5 |   await page.getByTestId(\"project-id\").click();\n    |                                        ^\n  6 |   await page\n  7 |     .getByTestId(\"project-id\")\n  8 |     .fill(\"a4068e0d-e512-484a-af0a-2acaafb5d937\");\n\n    at /home/nikhil/Desktop/ParagonTest/tests/Oauth.test.ts:5:40"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-10-16T18:21:07.504Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/home/nikhil/Desktop/ParagonTest/test-results/Oauth-Validating-the-api-key-auth-of-Klaviyo-integration-chromium/video.webm"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "/home/nikhil/Desktop/ParagonTest/test-results/Oauth-Validating-the-api-key-auth-of-Klaviyo-integration-chromium/test-failed-1.png"
-                    }
-                  ]
+                  "startTime": "2023-10-17T04:57:10.505Z",
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "/home/nikhil/Desktop/ParagonTest/tests/Oauth.test.ts",
+                    "column": 40,
+                    "line": 5
+                  }
                 }
               ],
               "status": "unexpected"
             }
           ],
-          "id": "3a8eff81eb6cddc395fb-3fec0696bc56a989d26e",
+          "id": "3a8eff81eb6cddc395fb-8be86fd66659e588b541",
           "file": "Oauth.test.ts",
-          "line": 47,
+          "line": 3,
           "column": 5
         }
       ]

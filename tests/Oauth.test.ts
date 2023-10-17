@@ -63,16 +63,14 @@ test("Validating the api key auth of Klaviyo integration", async ({ page }) => {
     const runcode = await page.getByTestId("code");
     await runcode.fill("paragon.connect('klaviyo')");
     await page.getByTestId("run-code").click();  
-    const page1Promise = page.waitForEvent("popup");
     const element = page
       .frameLocator("#paragon-connect-frame")
       .getByTestId("enable-button");
     await element.click();
-    const page1 = await page1Promise;
-    await page1.waitForTimeout(5000);
-    await page1.getByPlaceholder('pk_d7801c10ade7e58f3d4998f911d4dc92d6').fill('pk_97153c4488b9354bee56abc4f79b7ada98')
-    await page1.waitForTimeout(4000)
-    await page1.getByRole('button', { name : 'Continue'}).click()
+    await page.waitForTimeout(5000);
+    await page.getByPlaceholder('pk_d7801c10ade7e58f3d4998f911d4dc92d6').fill('pk_97153c4488b9354bee56abc4f79b7ada98')
+    await page.waitForTimeout(4000)
+    await page.getByRole('button', { name : 'Continue'}).click()
     console.log(element.textContent())
     await expect(element).toHaveText('Connected')
   });
